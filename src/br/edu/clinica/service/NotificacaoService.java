@@ -2,6 +2,7 @@ package br.edu.clinica.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import br.edu.clinica.observer.*;
 
 public class NotificacaoService {
     private final List<Runnable> observadores = new ArrayList<>();
