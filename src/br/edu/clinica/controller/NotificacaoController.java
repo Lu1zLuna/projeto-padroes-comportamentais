@@ -26,7 +26,6 @@ public class NotificacaoController {
 
     public void dispararNotificacoes(){
         view.titulo("Observer — Eventos e Assinantes");
-        // placeholder: usando Runnable até os alunos criarem Observer de verdade
 
         var paciente = new Paciente("Ana", "000.111.222-33");
         var medico   = new Medico("Carlos", "CRM-1234", "Clínico");

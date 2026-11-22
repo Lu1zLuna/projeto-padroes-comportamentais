@@ -12,10 +12,6 @@ public class NotificacaoService {
 
     public void adicionarObservador(ObservadorConsulta obs){
         if (!observadores.contains(obs)) observadores.add(obs);
-        // PADRÃO SUGERIDO: OBSERVER
-        // Ideia: trocar Runnable por interface Observer {update(evento)}
-        // e notificar todos quando um evento ocorrer (estado da consulta mudou etc.).
-        // TODO alunos: criar Subject/Observer específicos.
     }
 
     public void removerObservador(ObservadorConsulta obs) {
