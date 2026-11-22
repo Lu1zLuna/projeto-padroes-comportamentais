@@ -40,8 +40,16 @@ public class NotificacaoController {
         notificacaoService.adicionarObservador(farmacia);
         notificacaoService.adicionarObservador(auditoria);
 
-        var anterior = consulta.getEstado();
+        var anterior = consulta.getEstado();                // AGENDADA
+        consulta.setEstado("EM_ATENDIMENTO");
         notificacaoService.notificarMudanca(consulta, anterior);
+
+        notificacaoService.removerObservador(auditoria);
+
+        anterior = consulta.getEstado();                    // EM_ATENDIMENTO
+        consulta.setEstado("CONCLUIDA");
+        notificacaoService.notificarMudanca(consulta, anterior);
+
         view.linha();
     }
 }
