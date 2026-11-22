@@ -17,8 +17,12 @@ public class NotificacaoService {
         // TODO alunos: criar Subject/Observer específicos.
     }
 
+    public void removerObservador(ObservadorConsulta o) {
+        observadores.remove(o);
+    }
+
     public void notificarMudanca(String evento){
         System.out.println("[Service] Notificando: " + evento);
-        observadores.forEach(Runnable::run); // placeholder simplificado
+        // observadores.forEach(Runnable::run); // placeholder simplificado
     }
 }
