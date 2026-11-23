@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # MediClinic — Padrões Comportamentais (AV3)
 
 ## Como executar
@@ -12,7 +11,7 @@ java -cp out br.edu.clinica.main.ClinicaMain
 |---|---|
 | Iterator | João Alberto |
 | Memento | (a definir) |
-| State | (a definir) |
+| State | Hebert Santos |
 | Strategy | Alan |
 | Observer | Luiz Luna |
 
@@ -28,10 +27,15 @@ java -cp out br.edu.clinica.main.ClinicaMain
 - **Arquivos:** 
 - **Como verificar:** 
 
-## State — *(responsável a preencher)*
-- **Problema:** 
+## State — Hebert Santos
+- **Problema:** as transições de estado da consulta eram feitas por `String` solta em `EstadoConsultaService`, sem impedir transições inválidas.
 - **Arquivos:** 
-- **Como verificar:** 
+    - Modificados:
+        - `model/Consulta`, `service/EstadoConsultaService`, `controller/AtendimentoController`, `controller/NotificacaoController` e `service/NotificacaoService`
+    - Criados:
+        - `model/EstadoConsulta`, `model/Agendada`, `model/EmAtendimento`, `model/Concluida`, `model/Cancelada`
+- **Como verificar:** execute `br.edu.clinica.main.ClinicaMain`. A seção "State - Ciclo de Vida da Consulta" deve avançar uma consulta até `CONCLUIDA`, bloquear seu cancelamento e permitir o cancelamento de outra consulta ainda `AGENDADA`.
+- **Branch:** `feat/state`
 
 ## Strategy — Alan
 - **Problema:**
@@ -46,16 +50,3 @@ java -cp out br.edu.clinica.main.ClinicaMain
     - Criados:
         - `observer/ObservadorConsulta`, `observer/EventoConsulta`, `observer/EnfermagemObservador`, `observer/FarmaciaObservador`, `observer/AuditoriaObservador`
 - **Como verificar:** seção "Observer — Eventos e Assinantes" mostra Enfermagem e Auditoria na 1ª transição (AGENDADA→EM_ATENDIMENTO); apenas Farmácia na 2ª (EM_ATENDIMENTO→CONCLUIDA), pois Auditoria foi desinscrita.
-=======
-# projeto-padroes-comportamentais
-
-## State
-
-Responsável: Hebert Santos
-
-Branch: `feat/state`
-
-O padrão State controla as transições da consulta entre `AGENDADA`, `EM_ATENDIMENTO`, `CONCLUIDA` e `CANCELADA`.
-
-Para verificar, execute `br.edu.clinica.main.ClinicaMain`. O fluxo deve avançar uma consulta até `CONCLUIDA`, bloquear seu cancelamento e permitir o cancelamento de outra consulta ainda `AGENDADA`.
->>>>>>> Stashed changes
