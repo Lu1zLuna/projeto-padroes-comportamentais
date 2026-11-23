@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # MediClinic — Padrões Comportamentais (AV3)
 
 ## Como executar
@@ -45,3 +46,16 @@ java -cp out br.edu.clinica.main.ClinicaMain
     - Criados:
         - `observer/ObservadorConsulta`, `observer/EventoConsulta`, `observer/EnfermagemObservador`, `observer/FarmaciaObservador`, `observer/AuditoriaObservador`
 - **Como verificar:** seção "Observer — Eventos e Assinantes" mostra Enfermagem e Auditoria na 1ª transição (AGENDADA→EM_ATENDIMENTO); apenas Farmácia na 2ª (EM_ATENDIMENTO→CONCLUIDA), pois Auditoria foi desinscrita.
+=======
+# projeto-padroes-comportamentais
+
+## State
+
+Responsável: Hebert Santos
+
+Branch: `feat/state`
+
+O padrão State controla as transições da consulta entre `AGENDADA`, `EM_ATENDIMENTO`, `CONCLUIDA` e `CANCELADA`.
+
+Para verificar, execute `br.edu.clinica.main.ClinicaMain`. O fluxo deve avançar uma consulta até `CONCLUIDA`, bloquear seu cancelamento e permitir o cancelamento de outra consulta ainda `AGENDADA`.
+>>>>>>> Stashed changes
