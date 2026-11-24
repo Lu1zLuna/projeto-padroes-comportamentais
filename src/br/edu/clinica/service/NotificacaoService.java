@@ -19,7 +19,7 @@ public class NotificacaoService {
     }
 
     public void notificarMudanca(Consulta consulta, String estadoAnterior){
-        var evento = new EventoConsulta(consulta, estadoAnterior, consulta.getEstado());
+        var evento = new EventoConsulta(consulta, estadoAnterior, consulta.getEstado().getNome());
         for (var obs : List.copyOf(observadores)) {
             try {
                 obs.atualizar(evento);
